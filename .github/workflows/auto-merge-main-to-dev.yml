@@ -1,0 +1,25 @@
+name: Auto Merge main into development
+
+on:
+  push:
+    branches:
+      - main  # Triggers when something is pushed to main
+
+jobs:
+  merge:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+          fetch-depth: 0
+
+      - name: Merge main into development
+        run: |
+          git config --global user.name "github-actions[bot]"
+          git config --global user.email "github-actions[bot]@users.noreply.github.com"
+          git checkout development
+          git pull origin development
+          git merge --no-edit main || echo "No changes to merge"
+          git push origin development
