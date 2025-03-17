@@ -1,6 +1,6 @@
 # ZZZ Disk Stats Collector
 
-🚀 A Node.js script for collecting and analyzing disk stats from [Prydwen.gg](https://www.prydwen.gg) for Zenless Zone Zero (ZZZ).
+🚀 A Node.js script for collecting and analyzing disk stats from [Prydwen.gg](https://www.prydwen.gg/zenless/) for Zenless Zone Zero (ZZZ).
 
 ## 📌 Features
 
@@ -15,11 +15,6 @@
    ```sh
    git clone https://github.com/Maito1794/ZZZ-DiskStats.git
    cd ZZZ-DiskStats
-   ```
-
-2. Install dependencies:
-   ```sh
-   npm install
    ```
 
 ## ▶️ Usage
