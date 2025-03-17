@@ -25,8 +25,8 @@ node DiskStats.js
 ```
 
 The results will be saved as:
-- `disk_stats.json` – Raw merged character & disk data.
-- `formatted_output.txt` – Readable disk stats summary.
+- `characters_details.json` – Raw merged character & disk data.
+- `disk_stats.txt` – Readable disk stats summary.
 
 ## 🛠 Dependencies
 
