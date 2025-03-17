@@ -29,11 +29,11 @@ async function main() {
         const formattedStats = formatDiskStats(mergedData);
 
         // Save final results
-        fs.writeFileSync('disk_stats.json', JSON.stringify(mergedData, null, 2), 'utf-8');
-        console.log('✅ Complete data saved to disk_stats.json');
+        fs.writeFileSync('characters_details.json', JSON.stringify(mergedData, null, 2), 'utf-8');
+        console.log('✅ Complete data saved to characters_details.json');
 
-        fs.writeFileSync('formatted_output.txt', formattedStats, 'utf-8');
-        console.log('✅ Formatted stats saved to formatted_output.txt');
+        fs.writeFileSync('disk_stats.txt', formattedStats, 'utf-8');
+        console.log('✅ Formatted stats saved to disk_stats.txt');
 
         console.log('✅ Process completed successfully!');
     } catch (error) {
@@ -72,7 +72,6 @@ async function getCharactersData() {
                     main_6: unit.build.main_6.map(stat => stat.stat),
                     substats: Array.from(new Set(
                         unit.build.substats
-                            .replace(/\s+/g, '')
                             .replace(/>=|>|=/g, ", ")
                             .replace(/\(.*?\)/g, '')
                             .replace(/\[|\]/g, '')
