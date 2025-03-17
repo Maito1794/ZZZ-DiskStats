@@ -22,4 +22,10 @@ jobs:
           git checkout development
           git pull origin development
           git merge --no-edit main || echo "No changes to merge"
-          git push origin development
+          
+          # Only push if there were changes to merge
+          if [ $(git diff --stat origin/development..HEAD | tail -n 1 | awk '{print $1}') != "0" ]; then
+            git push origin development
+          else
+            echo "No changes to push"
+          fi
