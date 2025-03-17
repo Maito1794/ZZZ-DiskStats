@@ -72,7 +72,6 @@ async function getCharactersData() {
                     main_6: unit.build.main_6.map(stat => stat.stat),
                     substats: Array.from(new Set(
                         unit.build.substats
-                            .replace(/\s+/g, '')
                             .replace(/>=|>|=/g, ", ")
                             .replace(/\(.*?\)/g, '')
                             .replace(/\[|\]/g, '')
