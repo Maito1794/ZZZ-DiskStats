@@ -3,7 +3,7 @@ const path = require('path');
 
 // Base URLs for data fetching
 const BASE_URL = 'https://www.prydwen.gg/page-data/zenless/characters';
-const JS_URL = 'https://www.prydwen.gg/component---src-dynamic-pages-zzz-character-dynamic-tsx-676e4f1f549fc56d0d4d.js';
+const JS_URL = 'https://www.prydwen.gg/component---src-dynamic-pages-zzz-character-dynamic-tsx-df2fa704f1779534a941.js';
 
 /**
  * Main function to orchestrate the entire process
@@ -108,7 +108,7 @@ async function getDiskInformation(characterSlugs) {
         console.log('📄 JS file fetched successfully');
 
         // Extract the disk section
-        const diskPatternRegex = /},C=t(.*?)\,T=t/s;
+        const diskPatternRegex = /},C=t(.*?)\,[A-Z]=t/s;
         const diskSections = content.match(diskPatternRegex);
 
         if (!diskSections || diskSections.length < 2) {
